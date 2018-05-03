@@ -98,7 +98,10 @@ public class Util {
             Fluid fluid = stack.getFluid();
 
             if (fluid.getStill(stack) != null) {
-                return Minecraft.getMinecraft().getTextureMapBlocks().getTextureExtry(fluid.getStill().toString());
+                TextureAtlasSprite sprite = Minecraft.getMinecraft().getTextureMapBlocks().getTextureExtry(fluid.getStill().toString());
+                if(sprite != null){
+                    return sprite;
+                }
             }
         }
 
